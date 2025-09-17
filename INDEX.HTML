@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafetería Rock & Latte</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      margin: 0; 
+      padding: 0;
+      background: #111;
+      color: #f5f5f5;
+    }
+    header {
+      background: #000;
+      color: #e50914;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 3px solid #e50914;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1a1a1a;
+    }
+    nav a {
+      color: #e50914;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover {
+      background: #e50914;
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      color: #fff;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3.2em;
+      margin-bottom: 10px;
+      color: #e50914;
+      text-shadow: 2px 2px 5px black;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .menu-section {
+      margin-bottom: 50px;
+    }
+    .menu-section h2 {
+      color: #e50914;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e50914;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 2px 6px rgba(229, 9, 20, 0.4);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background: #222;
+    }
+    .card h3 {
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+    /* Formulario */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 2px 6px rgba(229, 9, 20, 0.4);
+    }
+    form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      color: #e50914;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: #fff;
+    }
+    form button {
+      background: #e50914;
+      border: none;
+      padding: 12px 20px;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #b20710;
+    }
+    /* Eventos */
+    .event {
+      background: #1a1a1a;
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0px 2px 6px rgba(229, 9, 20, 0.3);
+    }
+    .event h3 {
+      color: #e50914;
+      margin-bottom: 5px;
+    }
+    footer {
+      background: #000;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #e50914;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: #e50914;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    footer .social a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎶 Cafetería Rock & Latte 🎶</h1>
+    <p>Café y música para el alma</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#menu">Menú</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#playlist">Playlist</a>
+    <a href="#reservar">Reservar</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="hero" id="inicio">
+    <h1>Donde el café suena mejor</h1>
+    <p>Ambiente musical, bebidas únicas y buena vibra</p>
+  </div>
+
+  <!-- Menú -->
+  <section class="section" id="menu">
+    <h1 style="color:#e50914;">Menú Musical</h1>
+
+    <!-- Cafés Calientes -->
+    <div class="menu-section">
+      <h2>☕ Cafés Calientes</h2>
+      <div class="menu">
+        <div class="card"><h3>Espresso Metallica</h3><p>Intenso y oscuro.</p><p><strong>$40</strong></p></div>
+        <div class="card"><h3>Latte Beatles</h3><p>Clásico y suave.</p><p><strong>$45</strong></p></div>
+        <div class="card"><h3>Cappuccino Jazz</h3><p>Elegante y armonioso.</p><p><strong>$48</strong></p></div>
+        <div class="card"><h3>Moka Rolling Stones</h3><p>Con chocolate rebelde.</p><p><strong>$50</strong></p></div>
+        <div class="card"><h3>Café de Olla Mariachi</h3><p>Con canela y piloncillo.</p><p><strong>$42</strong></p></div>
+      </div>
+    </div>
+
+    <!-- Bebidas Frías -->
+    <div class="menu-section">
+      <h2>🥤 Bebidas Frías</h2>
+      <div class="menu">
+        <div class="card"><h3>Frappuccino Pop</h3><p>Dulce y refrescante.</p><p><strong>$55</strong></p></div>
+        <div class="card"><h3>Cold Brew Indie</h3><p>Infusionado lentamente.</p><p><strong>$50</strong></p></div>
+        <div class="card"><h3>Affogato Funk</h3><p>Helado de vainilla con espresso.</p><p><strong>$60</strong></p></div>
+        <div class="card"><h3>Limonada Electrónica</h3><p>Refrescante con twist cítrico.</p><p><strong>$38</strong></p></div>
+      </div>
+    </div>
+
+    <!-- Panadería y Postres -->
+    <div class="menu-section">
+      <h2>🍩 Panadería & Postres</h2>
+      <div class="menu">
+        <div class="card"><h3>Galletas Rock</h3><p>Chocolate chip caseras.</p><p><strong>$25</strong></p></div>
+        <div class="card"><h3>Muffin Blues</h3><p>De arándanos.</p><p><strong>$28</strong></p></div>
+        <div class="card"><h3>Brownie Punk</h3><p>Intenso y chocolatoso.</p><p><strong>$35</strong></p></div>
+        <div class="card"><h3>Croissant Clásico</h3><p>Mantequilloso recién horneado.</p><p><strong>$30</strong></p></div>
+        <div class="card"><h3>Cheesecake Balada</h3><p>Con frutos rojos.</p><p><strong>$65</strong></p></div>
+      </div>
+    </div>
+
+    <!-- Desayunos -->
+    <div class="menu-section">
+      <h2>🍳 Desayunos & Comida Ligera</h2>
+      <div class="menu">
+        <div class="card"><h3>Sándwich Indie</h3><p>Pavo, queso y vegetales.</p><p><strong>$65</strong></p></div>
+        <div class="card"><h3>Wrap Veggie Funk</h3><p>Hummus y verduras asadas.</p><p><strong>$68</strong></p></div>
+        <div class="card"><h3>Ensalada Reggae</h3><p>Colorida y fresca.</p><p><strong>$70</strong></p></div>
+        <div class="card"><h3>Panini Rockabilly</h3><p>Jamón serrano y queso.</p><p><strong>$75</strong></p></div>
+      </div>
+    </div>
+
+    <!-- Smoothies -->
+    <div class="menu-section">
+      <h2>🍹 Smoothies & Especialidades</h2>
+      <div class="menu">
+        <div class="card"><h3>Smoothie Tropical Salsa</h3><p>Mango, piña y coco.</p><p><strong>$55</strong></p></div>
+        <div class="card"><h3>Matcha Alternativo</h3><p>Con leche de almendra.</p><p><strong>$52</strong></p></div>
+        <div class="card"><h3>Chai Latte Épico</h3><p>Con especias aromáticas.</p><p><strong>$50</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eventos -->
+  <section class="section" id="eventos">
+    <h2 style="color:#e50914;">Próximos Eventos</h2>
+    <div class="event"><h3>Noche de Jazz en Vivo</h3><p>📅 Viernes 15 de Septiembre - 8:00 PM</p></div>
+    <div class="event"><h3>Open Mic Rock</h3><p>📅 Sábado 23 de Septiembre - 7:30 PM</p></div>
+  </section>
+
+  <!-- Playlist -->
+  <section class="section" id="playlist">
+    <h2 style="color:#e50914;">Nuestra Playlist</h2>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcF6B6QPhFDv?utm_source=generator" width="80%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </section>
+
+  <!-- Reservaciones -->
+  <section class="section" id="reservar">
+    <h2 style="color:#e50914;">Reservaciones</h2>
+    <form action="https://formspree.io/f/xvgqjwwq" method="POST">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" name="hora" required>
+
+      <label for="personas">Número de personas</label>
+      <input type="number" id="personas" name="personas" min="1" required>
+
+      <label for="comentarios">Comentarios</label>
+      <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+      <button type="submit">Reservar</button>
+    </form>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section" id="contacto">
+    <h2 style="color:#e50914;">Contacto</h2>
+    <p>📍 Av. del Rock 1985, Puebla</p>
+    <p>📞 222-706-2703</p>
+    <p>📧 alexlizarraganet@gmail.com</p>
+  </section> 
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rock & Latte - Donde el café tiene ritmo 🎸</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
